@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <main class="container">
+    <header class="topbar">
+      <div>
+        <h1> weather dashboard </h1>
+      </div>
+      <button id="themeBtn" class="theme-btn">🌙 Dark</button>
+    </header>
+
+    <section class="search-section">
+      <form id="searchForm">
+        <div class="search-wrap">
+          <input id="cityInput" type="text" placeholder="Search for a city..." autocomplete="off" required>
+          <div id="suggestions" class="suggestions"></div>
+        </div>
+        <button type="submit" class="primary-btn">Search</button>
+      </form>
+    </section>
+
+    <p id="status" role="status" aria-live="polite"></p>
+    <p id="errorMsg" class="error" role="alert" hidden></p>
+
+    <section id="weatherCard" class="weather-card" hidden>
+      <div class="weather-heading">
+        <div>
+          <p class="eyebrow">CURRENT WEATHER</p>
+          <h2 id="cityName">--</h2>
+          <p id="weatherDescription">--</p>
+          <p id="updatedAt" class="muted"></p>
+        </div>
+        <button id="favoriteBtn" class="favorite-btn">
+          ☆ Add favorite
+        </button>
+      </div>
+
+      <div class="current-weather">
+        <img id="weatherIcon" alt="Weather icon">
+        <div>
+          <div class="temperature">
+            <span id="temperature">--</span><span>°C</span>
+          </div>
+          <p>Feels like <span id="feelsLike">--</span>°C</p>
+        </div>
+      </div>
+
+      <div class="details-grid">
+        <article class="detail">
+          <span>💧 Humidity</span>
+          <strong id="humidity">--%</strong>
+        </article>
+        <article class="detail">
+          <span>💨 Wind speed</span>
+          <strong id="windSpeed">-- m/s</strong>
+        </article>
+        <article class="detail">
+          <span>🌡️ Pressure</span>
+          <strong id="pressure">-- hPa</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="forecast-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">PLAN AHEAD</p>
+          <h2>5-Day Forecast</h2>
+        </div>
+      </div>
+      <div id="forecastList" class="forecast-grid">
+        <p class="muted">Search for a city to see its forecast.</p>
+      </div>
+    </section>
+
+    <section class="favorites-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">YOUR COLLECTION</p>
+          <h2>Favorite Cities</h2>
+        </div>
+      </div>
+      <div id="favoritesList" class="favorites-list"></div>
+    </section>
+
+    <footer>Weather data powered by OpenWeatherMap</footer>
+    <script src="weather.js" defer></script>
+  </main>
+</body>
+
+</html>
